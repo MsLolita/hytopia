@@ -1,6 +1,5 @@
 from random import choice
 
-import requests
 from fake_useragent import UserAgent  # pip install fake-useragent
 
 from core.utils import str_to_file, logger, CaptchaService
@@ -72,7 +71,7 @@ class Hytopia(ClientSession, Person):
     def logs(self, file_name: str, msg_result: str = ""):
         file_msg = f"{self.email}|{self.username}|{self.proxy}"
         str_to_file(f"./logs/{file_name}.txt", file_msg)
-        msg_result = msg_result and " | " + msg_result
+        msg_result = msg_result and " | " + str(msg_result)
 
         if file_name == "success":
             logger.success(f"{self.email}{msg_result}")
