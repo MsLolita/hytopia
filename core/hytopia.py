@@ -27,7 +27,7 @@ class Hytopia(ClientSession, Person):
             'user-agent': UserAgent().random,
         }
 
-        ClientSession.__init__(self, headers=headers, trust_env=True, timeout=300)
+        ClientSession.__init__(self, headers=headers, trust_env=True)
         Person.__init__(self)
 
         self.email = email

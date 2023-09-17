@@ -70,7 +70,7 @@ class AutoReger:
 
                     resp_json = await hytopia.enter_beta()
 
-                logger.debug(resp_json)
+                logger.debug(f"resp_json: {resp_json}")
                 success = resp_json.get("success")
 
                 logs["ok"] = success
